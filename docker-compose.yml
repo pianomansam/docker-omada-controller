@@ -1,0 +1,21 @@
+version: '3'
+services:
+  omada:
+    # build: .
+    image: mbentley/omada-controller:3.2
+    environment:
+      - TZ=Etc/UTC
+      - SMALL_FILES=false
+    ports:
+      - 8088:8088
+      - 8043:8043
+      - 27001:27001/udp
+      - 27002:27002
+      - 29810:29810/udp
+      - 29811:29811
+      - 29812:29812
+      - 29813:29813
+    volumes:
+      - /home/soltz/omada/data:/opt/tplink/EAPController/data
+      - /home/soltz/omada/work:/opt/tplink/EAPController/work
+      - /home/soltz/omada/logs:/opt/tplink/EAPController/logs
