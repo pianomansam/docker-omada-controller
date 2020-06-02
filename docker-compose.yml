@@ -3,6 +3,7 @@ services:
   omada:
     # build: .
     image: mbentley/omada-controller:3.2
+    restart: unless-stopped
     environment:
       - TZ=Etc/UTC
       - SMALL_FILES=false
